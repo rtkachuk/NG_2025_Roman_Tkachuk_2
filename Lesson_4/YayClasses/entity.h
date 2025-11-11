@@ -1,0 +1,31 @@
+#ifndef ENTITY_H
+#define ENTITY_H
+
+#include <iostream>
+
+using namespace std;
+
+class Entity
+{
+public:
+    Entity ();
+    Entity (int hp_val, int dmg_val);
+    void makeDamage(int damage);
+
+    void setHp(int newHp);
+    int getHp() { return hp; };
+
+    void setDmg(int dmg);
+    int getDmg() { return dmg; };
+
+    void showEntityStatus() {
+        cout << "HP: " << hp << ", DMG: " << dmg << endl;
+    }
+
+
+private:
+    int hp;
+    int dmg;
+};
+
+#endif // ENTITY_H
