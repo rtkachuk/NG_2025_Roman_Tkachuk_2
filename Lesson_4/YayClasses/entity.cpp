@@ -28,3 +28,7 @@ void Entity::setDmg(int newDmg)
 {
     dmg = newDmg > 80 ? dmg : newDmg;
 }
+
+void Entity::showEntityStatus() {
+    cout << "HP: " << hp << ", DMG: " << dmg << endl;
+}

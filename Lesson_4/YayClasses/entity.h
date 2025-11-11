@@ -18,9 +18,7 @@ public:
     void setDmg(int dmg);
     int getDmg() { return dmg; };
 
-    void showEntityStatus() {
-        cout << "HP: " << hp << ", DMG: " << dmg << endl;
-    }
+    void showEntityStatus();
 
 
 private:

@@ -11,6 +11,5 @@ int main()
     player.makeDamage(monster.getDmg());
     player.showEntityStatus();
 
-
     return 0;
 }
