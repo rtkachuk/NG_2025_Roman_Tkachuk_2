@@ -1,5 +1,4 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#pragma once
 
 #include <iostream>
 
@@ -25,5 +24,3 @@ private:
     int hp;
     int dmg;
 };
-
-#endif // ENTITY_H
