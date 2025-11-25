@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QDir>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,4 +26,5 @@ private:
     Ui::MainWindow *ui;
 
     int calculateSymbols();
+    QStringList getHomeFolderContents();
 };

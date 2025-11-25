@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect (ui->dial, &QDial::valueChanged, ui->sl_hor, &QSlider::setValue);
     connect (ui->dial, &QDial::valueChanged, ui->sl_vert, &QSlider::setValue);
     connect (ui->dial, &QDial::valueChanged, ui->sb_number, &QSpinBox::setValue);
+
+    ui->lw_homeDir->addItems(getHomeFolderContents());
 }
 
 MainWindow::~MainWindow()
@@ -36,4 +38,9 @@ int MainWindow::calculateSymbols()
     qDebug() << "Amount of symbols: " << text.size();
     ui->statusbar->showMessage("Amount of symbols: " + QString::number(text.size()));
     return text.size();
+}
+
+QStringList MainWindow::getHomeFolderContents()
+{
+    return QDir::home().entryList();
 }
