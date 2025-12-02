@@ -9,6 +9,7 @@ Client::Client(QWidget *parent)
     m_socket = new QTcpSocket(this);
 
     ui->sb_port->setRange(0,65535);
+    ui->te_chat->setReadOnly(true);
 
     connect (m_socket, &QTcpSocket::connected, this, &Client::connectedToServer);
     connect (ui->pb_connect, &QPushButton::clicked, this, &Client::bConnectToServer);
@@ -41,7 +42,7 @@ void Client::newMessage()
     message = message.remove(0,2);
 
     switch (cmd) {
-    case 'm': ui->te_chat->setPlainText(ui->te_chat->toPlainText() + QString(message)); break;
+    case 'm': ui->te_chat->setPlainText(ui->te_chat->toPlainText() + QString(message) + "\n"); break;
     case 'u': updateUsersList(message); break;
     default: qDebug() << "Wrong command from server: " << cmd;
     }
